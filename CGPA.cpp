@@ -109,17 +109,18 @@ int main()
 	cout<<endl<<"                                 Github at Ashish0804"<<endl<<endl<<endl<<endl;
 	cout<<endl<<"FOR MORE INFORMATION AND REPORTING ANY ERRORS VISIT: https://github.com/Ashish0804/CGPA-CALCULATOR"<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl;
 	system("pause");
+	loop:
     Mark(Marks);
-	bool go;
+	bool go = true;
 	go = Confirm();
-	if (!go) Mark(Marks);
-	else
-	{
+	if (!go) goto loop;
+    else
+	  {
 		for(int j=0;j<13;j++)
 			Grades[j]=Grade(Marks[j]);
 
 		Cgpa = CGPA(Grades,Credits);
-	}
+	  }
 	cout<<endl<<endl<<"CGPA: "<<Cgpa;
 	cout<<endl<<"PERCENTAGE: "<<Cgpa*10;
 
